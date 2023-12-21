@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Segundo proyecto de la 'Certificación de Diseño Web Responsivo' de freeCodeCamp.org" />
+    <title>Documentación Técnica | RWD</title>
+    <link rel="stylesheet" href="../../public/css/styles.css" />
+    <link rel="stylesheet" href="../../public/css/project-three.css" />
+  </head>
+  <body>
+    <header class="global-header"><a href="../..">Inicio</a></header>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>Git</header>
+        <ul>
+          <li><a href="#introduccion" class="nav-link">introduccion</a></li>
+          <li><a href="#instalacion_y_configuracion" class="nav-link">instalacion y configuracion</a></li>
+          <li><a href="#comandos_basicos" class="nav-link">comandos basicos</a></li>
+          <li><a href="#trabajo_con_ramas" class="nav-link">trabajo con ramas</a></li>
+          <li><a href="#resolucion_de_conflictos" class="nav-link">resolucion de conflictos</a></li>
+        </ul>
+      </nav>
+      <div id="doc-container">
+        <section id="introduccion" class="main-section">
+          <header>introduccion</header>
+          <p><b>Git</b> es un <em>Sistema de Control de Versiones Distribuido</em>, ampliamente utilizado en el desarrollo de software para rastrear y gestionar cambios en el código fuente y otros archivos de un proyecto a lo largo del tiempo.</p>
+          <p>Fue creado por <em>Linus Torvalds</em> en 2005 y es una herramienta de código abierto.</p>
+        </section>
+        <hr>
+        <section id="instalacion_y_configuracion" class="main-section">
+          <header>instalacion y configuracion</header>
+          <p>La instalación de <b>Git</b> es bastante sencilla y está disponible para varios <em>Sistemas Operativos</em>:</p>
+          <ul>
+            <li>
+              <h3>Windows</h3>
+              <p>Descargar el instalador desde el <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">Sitio Oficial de Git</a>, ejecutarlo y seguir las instrucciones del asistente del instalador</p>
+            </li>
+            <li>
+              <h3>MacOS</h3>
+              <p>Si <em>xcode</em> está instalado, seguramente <b>Git</b> lo este también. De todas formas se puede instalar con <em>Homebrew</em> o desde el <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">Sitio Oficial de Git</a></p>
+            </li>
+            <li>
+              <h3>Linux</h3>
+              <p>Para instalarlo debemos abrir una terminal y ejecutar el comando según su distribución:</p>
+              <pre>
+                # Ubuntu/Debian
+                sudo apt-get install git
+
+                # Fedora
+                sudo dnf install git
+
+                # RHEL
+                sudo yum install git
+              </pre>
+            </li>
+          </ul>
+          <p>Una vez instalado, debemos configurar algunos detalles básicos antes de comenzar a utilizarlo. Los dos ajustes principales para poder realizar <em>"commits"</em> son configurar el <em>Nombre de Usuario</em> y el <em>Email de Usuario</em>.</p>
+          <p>En una terminal ejecutamos los siguientes comandos:</p>
+          <pre>
+            git config --global user.name "&lt;nombre-usuario&gt;"
+
+            git config --global user.email "&lt;email-usuario&gt;"
+          </pre>
+        </section>
+        <hr>
+        <section id="comandos_basicos" class="main-section">
+          <header>comandos basicos</header>
+          <ul>
+            <li>
+              <h3>git init</h3>
+              <p>Inicializa un nuevo repositorio de <b>Git</b> en un directorio vacio o convierte un directorio existente en un repositorio de <b>Git</b>.</p>
+            </li>
+            <li>
+              <h3>git clone</h3>
+              <p>Crea una copia local de un repositorio remoto existente.</p>
+              <pre>
+                git clone https://github.com/&lt;nombre-usuario&gt;/&lt;nombre-repositorio&gt;
+              </pre>
+            </li>
+            <li>
+              <h3>git add</h3>
+              <p>Agrega archivos al área de preparación (staging) para incluirlos en el próximo <em>commit</em>.</p>
+              <pre>
+                # Añadir cambios de un archivo
+                git add archivo.txt
+
+                # Añadir cambios dentro de un directorio
+                git add directorio/
+
+                # Añadir todos los cambios
+                git add .
+              </pre>
+            </li>
+            <li>
+              <h3>git commit</h3>
+              <p>Crea una revisión (commit) con los cambios almacenados en el área de preparación.</p>
+              <pre>
+                git commit -m "Mensaje del commit"
+              </pre>
+            </li>
+            <li>
+              <h3>git status</h3>
+              <p>Muestra el estado actual del repositorio, incluyendo los archivos modificados, agregados y eliminados.</p>
+            </li>
+            <li>
+              <h3>git log</h3>
+              <p>Muestra el historial de <em>commits</em> en el repositorio, mostrando detalles como autor, fecha y mensaje.</p>
+            </li>
+            <li>
+              <h3>git diff</h3>
+              <p>Muestra las diferencias entre el área de preparación y el último <em>commit</em> o entre dos <em>commits</em>.</p>
+              <pre>
+                # Diferencia entre preparación y último commit
+                git diff
+
+                # Diferencia entre dos commits
+                git diff &lt;hash-commit-1&gt; &lt;hash-commit-2&gt;
+              </pre>
+            </li>
+            <li>
+              <h3>git push</h3>
+              <p>Envía los <em>commits</em> locales al repositorio remoto.</p>
+            </li>
+            <li>
+              <h3>git pull</h3>
+              <p>Obtiene y fusiona los cambios del repositorio remoto en el repositorio local.</p>
+            </li>
+            <li>
+              <h3>git branch</h3>
+              <p>Muestra la lista de ramas en el repositorio o crea una nueva rama.</p>
+              <pre>
+                # Lista de ramas
+                git branch
+
+                # Crear rama
+                git branc &lt;nueva-rama&gt;
+              </pre>
+            </li>
+            <li>
+              <h3>git checkout</h3>
+              <p>Cambia a una rama o <em>commit</em> específico.</p>
+              <pre>
+                # Cambiar a otra rama
+                git checkout &lt;nombre-rama&gt;
+
+                # Cambiar a otro commit
+                git checkout &lt;hash-commit&gt;
+              </pre>
+            </li>
+            <li>
+              <h3>git merge</h3>
+              <p>Fusiona una rama con la rama actual.</p>
+              <pre>
+                git merge &lt;nombre-rama&gt;
+              </pre>
+            </li>
+            <li>
+              <h3>git remote</h3>
+              <p>Muestra la lista de repositorios remotos asociados con el repositorio local.</p>
+            </li>
+          </ul>
+        </section>
+        <hr>
+        <section id="trabajo_con_ramas" class="main-section">
+          <header>trabajo con ramas</header>
+          <p>Trabajar con ramas en <b>Git</b> es una parte esencial del flujo de trabajo de desarrollo. Las ramas permiten desarrollar características, realizar correcciones o experimentar sin afectar la rama principal del proyecto.</p>
+          <ul>
+            <li>
+              <h3>Rama (Branch)</h3>
+              <p>Una rama es una línea de desarrollo independiente que se crea a partir de otra rama (generalmente de "main" o "master"). Las ramas permiten desarrollar nuevas características o solucionar problemas sin afectar el código de la rama principal.</p>
+            </li>
+            <li>
+              <h3>Rama Principal (master o main)</h3>
+              <p>La rama principal es la rama principal de desarrollo del proyecto. Es donde se encuentran los cambios estables y probados antes de lanzar una nueva versión.</p>
+            </li>
+            <li>
+              <h3>Crear una rama</h3>
+              <p>Podemos crear una rama utilizando el comando <code>git branch</code> seguido del nombre de la rama y, opcionalmente, el <em>commit</em> del que queramos partir.</p>
+            </li>
+            <li>
+              <h3>Cambiar de Rama</h3>
+              <p>Para cambiar de rama se utiliza el comando <code>git checkout</code> o el comando <code>git switch</code> seguido del nombre de la rama a la que queramos cambiar.</p>
+            </li>
+            <li>
+              <h3>Fusionar una Rama</h3>
+              <p>Una vez completado el desarrollo en una rama podemos añadir los cambios a la rama principal con el comando <code>git merge</code>.</p>
+            </li>
+            <li>
+              <h3>Eliminar una Rama</h3>
+              <p>Para eliminar una rama después de haberla fusionado y ya no necesitarla podemos utilizar el comando <code>git branch -d &lt;nombre-rama&gt;</code>.</p>
+            </li>
+          </ul>
+        </section>
+        <hr>
+        <section id="resolucion_de_conflictos" class="main-section">
+          <header>resolucion de conflictos</header>
+          <p>La resolución de conflictos en <b>Git</b> ocurre cuando dos o más personas modifican el mismo archivo en diferentes ramas y luego tratan de fusionar esas ramas.</p>
+          <p><b>Git</b> puede enfrentar dificultades para combinar automáticamente esos cambios, lo que genera un conflicto que se debe resolver manualmente.</p>
+          <p>Si al ejecutar <code>git pull</code> se encuentra un conflicto, <b>Git</b> notificará que no se puede hacer una <em>fusión automática</em> y mostrará un mensaje indicando los archivos que tienen conflictos. Estos archivos tendrán una apariencia similar a ésta en la zona conflictiva:</p>
+          <pre>
+            &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+            Código de la rama actual
+            =======
+            Código de la otra rama
+            &gt;&gt;&gt;&gt;&gt;&gt;&gt; nombre-de-otra-rama
+          </pre>
+          <p>Entonces debemos eliminar los marcadores y elegir que cambios deben mantenerse, y luego guardamos y enviamos los cambios.</p>
+        </section>
+      </div>  
+    </main>
+  </body>
+</html>
