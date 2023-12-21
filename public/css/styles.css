@@ -46,9 +46,12 @@ body {
   cursor: pointer;
 }
 
+main {
+  margin-top: 56px;
+}
+
 /* -- Home Page -- */
 .home-main {
-  margin-top: 56px;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
