@@ -1,0 +1,81 @@
+:root {
+  /* Para navbars */
+  --background-color1: #0a0a23;
+  /* Para background */
+  --background-color2: #1b1b32;
+  /* Para botones */
+  --background-color3: #2a2a40;
+
+  /* Para texto y bordes */
+  --text-color1: #dfdfe2;
+  --text-color2: #d0d0d5;
+
+  --font-family: monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color2);
+  font-family: var(--font-family);
+  font-size: 18px;
+  color: var(--text-color1);
+}
+
+.global-header {
+  height: 56px;
+  position: fixed;
+  top: 0;
+  background-color: var(--background-color1);
+  text-align: center;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.global-header a {
+  font-size: calc(56px - 24px);
+  color: var(--text-color1);
+  text-decoration: none;
+}
+
+.global-header a:hover {
+  color: var(--text-color2);
+  cursor: pointer;
+}
+
+/* -- Home Page -- */
+.home-main {
+  margin-top: 56px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 800px;
+  min-width: 300px;
+  height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-main a {
+  width: 100%;
+  height: 56px;
+  font-size: calc(56px - 24px);
+  margin: 10px 0;
+  background-color: var(--background-color3);
+  border: 2px solid var(--text-color1);
+  text-align: center;
+  color: var(--text-color1);
+  text-decoration: none;
+}
+
+.home-main a:hover {
+  background-color: var(--background-color2);
+  color: var(--text-color2);
+  border-color: var(--text-color2);
+  transform: scale(1.05);
+}
