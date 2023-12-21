@@ -68,9 +68,16 @@ body {
   margin: 10px 0;
   background-color: var(--background-color3);
   border: 2px solid var(--text-color1);
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   color: var(--text-color1);
   text-decoration: none;
+}
+
+.home-main a:last-of-type {
+  width: 50%;
+  min-width: 300px;
 }
 
 .home-main a:hover {
